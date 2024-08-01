@@ -111,7 +111,7 @@ function showData() {
     }
 
     const deleteAllButton = document.getElementById('deleteAll');
-    if (deleteAllButton) {
+    if (deleteAllButton){
         if (datapro.length > 0) {
             deleteAllButton.style.display = "block";
             deleteAllButton.innerHTML = `Delete All (${datapro.length})`;
@@ -209,4 +209,4 @@ function searchData(value) {
         }
     }
     document.getElementById('tbody').innerHTML = table;
-}
+};
