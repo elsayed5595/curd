@@ -1,4 +1,5 @@
-*{
+ 
+ *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,6 +10,7 @@ body{
     color: white;
     font-family: system-ui, sans-serif;
 }
+
 :root{
     --btn-color:#0b45e6;
 }
@@ -18,42 +20,49 @@ body{
     width: 80%;
     margin: auto;
 }
+
 .crud .head{
     text-align: center;
     text-transform: uppercase;
     margin: 10px 0;
 }
- input{
+
+input{
     width: 100%;
     height: 30px;
     outline: none;
     border: none;
     background-color: #111;
-    margin: 4px  0;
+    margin: 4px 0;
     border-radius: 4px;
     padding: 4px;
     color: white;
 }
+
 input:focus{
     background-color: black;
     transform: scale(1.1);
 }
+
 .inputs .price{
     display: flex;
     text-align: center;
-    align-items:  center;
+    align-items: center;
     gap: 6px;
 }
+
 #total{
     background-color:red;
     padding: 10px;
     border-radius:50%;
     font-weight: bold;
 }
+
 #total::before{
     content: 'total';
     font-weight: bold;
 }
+
 button{
     width: 100%;
     height: 30px;
@@ -62,42 +71,40 @@ button{
     background-color: var(--btn-color);
     color: white;
     font-size: larger;
-
     border-radius:20px;
     transition: .5s;
 }
+
 button:hover{
     background-color: #0443f394;
-    
     letter-spacing: 1px;
 }
+
 .outputs .btn-search{
- display: flex;
- justify-content: space-between;
- 
+    display: flex;
+    justify-content: space-between;
 }
 
 .outputs .btn-search button{
     width: 45%;
 }
-/*srat table*/
+
+/*start table*/
 table{
     width: 100%;
     text-align: center;
     margin:10px 0 ;
-   overflow-x: scroll;
+    overflow-x: scroll;
 }
+
 table th{
     text-transform: uppercase; 
+}
 
-   
-}
-table th{
+table th, td{
     padding: 5px;
 }
-td{
-    padding: 5px;
-}
+
 #deleteAll{
     width: 100%;
     margin: 5px;
@@ -105,16 +112,27 @@ td{
     display: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .crud {
+        width: 100%;
+    }
+    .inputs .price {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .outputs .btn-search {
+        flex-direction: column;
+    }
+    .outputs .btn-search button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    table {
+        font-size: 14px;
+    }
+    input, button {
+        height: 40px;
+        font-size: medium;
+    }
+}

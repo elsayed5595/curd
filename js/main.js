@@ -36,33 +36,33 @@ if (localStorage.product != null) {
 submit.onclick = function () {
     let newpro = {
         id: datapro.length > 0 ? datapro[datapro.length - 1].id + 1 : 1,
-        title: title.value.toLowerCase(), 
+        title: title.value.toLowerCase(),
         price: price.value,
         taxes: taxes.value,
         ads: ads.value,
         discount: discount.value,
         total: total.innerHTML,
         count: count.value,
-        category: category.value.toLowerCase() 
+        category: category.value.toLowerCase()
     };
-   if(title.value !='' && price.value !=''){
-    if (mode === 'create') {
-        if (newpro.count > 1) {
-            for (let i = 0; i < count.value; i++) {
-                datapro.push({ ...newpro, id: datapro.length > 0 ? datapro[datapro.length - 1].id + 1 : 1 });
+    if (title.value != '' && price.value != '') {
+        if (mode === 'create') {
+            if (newpro.count > 1) {
+                for (let i = 0; i < count.value; i++) {
+                    datapro.push({ ...newpro, id: datapro.length > 0 ? datapro[datapro.length - 1].id + 1 : 1 });
+                }
+            } else {
+                datapro.push(newpro);
             }
         } else {
-            datapro.push(newpro);
-        }
-    } else {
-        datapro[tmb] = newpro;
-        mode = 'create';
-        submit.innerHTML = 'Create';
-        count.style.display = 'block';
+            datapro[tmb] = newpro;
+            mode = 'create';
+            submit.innerHTML = 'Create';
+            count.style.display = 'block';
+        };
+
     };
 
-   };
-   
     localStorage.setItem('product', JSON.stringify(datapro));
     cleardata();
     showData();
@@ -111,7 +111,7 @@ function showData() {
     }
 
     const deleteAllButton = document.getElementById('deleteAll');
-    if (deleteAllButton){
+    if (deleteAllButton) {
         if (datapro.length > 0) {
             deleteAllButton.style.display = "block";
             deleteAllButton.innerHTML = `Delete All (${datapro.length})`;
@@ -164,11 +164,11 @@ function getsearchmood(id) {
 
     } else {
         searchmood = 'category';
-  
+
     }
-            inputsearch.placeholder = 'search By  '+ searchmood;
+    inputsearch.placeholder = 'search By  ' + searchmood;
     inputsearch.focus();
-    search.value='';
+    search.value = '';
     showData();
 }
 

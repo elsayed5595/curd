@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curd</title>
-  
     <link rel="stylesheet" href="../css/indx.css">
 </head>
 <body>
 <!--start crud-->
   <div class="crud">
-<!--start head-->
-   <div class="head">
-  <h2>Crud</h2>
-  <p>product management system</p>
-   </div>
- <!--end head-->
-<!--start input-->
-   <div class="inputs">
+    <!--start head-->
+    <div class="head">
+      <h2>Crud</h2>
+      <p>product management system</p>
+    </div>
+    <!--end head-->
+    <!--start input-->
+    <div class="inputs">
         <input id="title" type="text" placeholder="title"> 
         <div class="price">
             <input onkeyup="getTotal()" type="number" id="price" placeholder="price">
@@ -25,54 +24,49 @@
             <input onkeyup="getTotal()" type="number" id="ads" placeholder="ads">
             <input onkeyup="getTotal()" type="number" id="discount" placeholder="disCount">
             <small id="total"></small>
-            
         </div>
         <input id="count" type="number" placeholder="count"> 
         <input id="category" type="text" placeholder="category"> 
         <button id="submit">creat</button>
     </div>
-<!--end input-->
+    <!--end input-->
 
-<!--start outputs-->
-<div class="outputs">
-<div class="search">
-    <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="search">
-    <div class="btn-search">
-        <button onclick="getsearchmood(this.id)"   id="search-title">search By title</button>
-        <button onclick="getsearchmood(this.id)"  id="search-category">search By category</button>
+    <!--start outputs-->
+    <div class="outputs">
+        <div class="search">
+            <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="search">
+            <div class="btn-search">
+                <button onclick="getsearchmood(this.id)" id="search-title">search By title</button>
+                <button onclick="getsearchmood(this.id)" id="search-category">search By category</button>
+            </div>
+        </div>
     </div>
-</div>
-</div>
+    <!--end outputs-->
 
-<!--end outputs-->
-<div  >
-
-    <div class="deleteAll">
-        <button id="deleteAll">deleteAll</button>
+    <div>
+        <div class="deleteAll">
+            <button id="deleteAll">deleteAll</button>
+        </div>
+        <table>
+            <tr>
+                <th>id</th>     
+                <th>title</th>
+                <th>price</th>
+                <th>taxes</th>
+                <th>ads</th>
+                <th>disCount</th>
+                <th>total</th>
+                <th>category</th>
+                <th>ubdate</th>
+                <th>delet</th>
+            </tr>
+            <tbody id="tbody"></tbody>
+        </table>
     </div>
-<table >
-    <tr>
-        <th>id</th>     
-        <th>title</th>
-        <th>price</th>
-        <th>taxes</th>
-        <th>ads</th>
-        <th>disCount</th>
-        <th>total</th>
-        <th>category</th>
-        <th>ubdate</th>
-        <th>delet</th>
-    </tr>
-    <tbody id="tbody">
-         
 
-    </tbody>
-</table>
-</div>
+  </div> 
+  <!--end crud-->
 
-</div> 
-<!--end crud-->
-656565
-    <script src="/js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
